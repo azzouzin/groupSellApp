@@ -26,7 +26,7 @@ class OnBoardingController extends GetxController {
     // Here you can define your LocalStorage to set OnBoarding bool isFirstTime = false.
     // So, that where ever app launches, app will check if isFirstTime = true, show onBoarding else show Login or Dashboard.
     if (currentPageIndex.value == 2) {
-      Get.to(() => const ChoseScreen());
+      Get.to(() => ChoseScreen());
     } else {
       int page = currentPageIndex.value + 1;
       pageController.jumpToPage(page);

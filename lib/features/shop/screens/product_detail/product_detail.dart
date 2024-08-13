@@ -63,7 +63,7 @@ class ProductDetail extends StatelessWidget {
                         onPressed: () => Get.to(() => const CheckoutScreen())),
                   ),
                   const SizedBox(height: TSizes.spaceBtwSections),
-// Chat
+                  // Chat
                   SizedBox(
                     width: TDeviceUtils.getScreenWidth(context),
                     child: ElevatedButton(

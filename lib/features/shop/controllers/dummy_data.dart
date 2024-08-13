@@ -17,10 +17,10 @@ import '../models/product_variation_model.dart';
 class TDummyData {
   /// -- User
   static final UserModel user = UserModel(
-    firstName: 'Coding',
-    lastName: 'with T',
-    email: 'support@codingwithT.com',
-    phoneNumber: '+14155552671',
+    firstName: 'مروان',
+    lastName: 'عزوز',
+    email: 'azzouzmerw@gmail.com',
+    phoneNumber: '+213562413935',
     password: '',
     profilePicture: TImages.user,
     addresses: [
@@ -71,6 +71,42 @@ class TDummyData {
         price: products[1].price,
         selectedVariation: products[1].productVariations != null
             ? products[1].productVariations![1].attributeValues
+            : {},
+      ),
+      CartItemModel(
+        productId: '003',
+        variationId: '',
+        quantity: 15,
+        title: products[3].title,
+        image: products[3].thumbnail,
+        brandName: products[3].brand!.name,
+        price: products[3].price,
+        selectedVariation: products[3].productVariations != null
+            ? products[3].productVariations![3].attributeValues
+            : {},
+      ),
+      CartItemModel(
+        productId: '004',
+        variationId: '',
+        quantity: 15,
+        title: products[4].title,
+        image: products[4].thumbnail,
+        brandName: products[4].brand!.name,
+        price: products[4].price,
+        selectedVariation: products[4].productVariations != null
+            ? products[4].productVariations![4].attributeValues
+            : {},
+      ),
+      CartItemModel(
+        productId: '005',
+        variationId: '',
+        quantity: 15,
+        title: products[5].title,
+        image: products[5].thumbnail,
+        brandName: products[5].brand!.name,
+        price: products[5].price,
+        selectedVariation: products[5].productVariations != null
+            ? products[5].productVariations![5].attributeValues
             : {},
       ),
     ],
