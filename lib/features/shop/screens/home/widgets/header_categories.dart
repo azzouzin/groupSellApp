@@ -28,7 +28,7 @@ class THeaderCategories extends StatelessWidget {
 
           /// -- Categories
           SizedBox(
-            height: 80,
+            height: 82,
             child: ListView.builder(
               itemCount: categories.length,
               shrinkWrap: true,

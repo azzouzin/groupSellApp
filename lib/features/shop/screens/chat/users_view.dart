@@ -50,7 +50,7 @@ class _UsersViewState extends State<UsersView> {
                     users[index].toString() +
                     ".jpg"),
               ),
-              subtitle: Text(users[index].email),
+              subtitle: Text("مرحبا بك كيف اقوم بخدمتك؟"),
               onTap: () {
                 Get.to(ChatView());
               },

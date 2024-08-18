@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../common/widgets/appbar/appbar.dart';
+import '../../../../common/widgets/custom_snackbar.dart';
 import '../../../../utils/constants/sizes.dart';
+import '../../../personalization/screens/address/widgets/single_address_widget.dart';
+import '../../controllers/dummy_data.dart';
 import '../cart/widgets/cart_items.dart';
 
 class SellerOrderView extends StatelessWidget {
@@ -21,13 +24,21 @@ class SellerOrderView extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text("كل الطلبيات بلغت حد الشراء الجماعي للمنتج",
-                  style: Theme.of(context).textTheme.headlineSmall),
-              SizedBox(height: TSizes.spaceBtwSections),
-
               /// -- Items in Cart
               TCartItems(
                 showAddRemoveButtons: false,
+              ),
+              Column(
+                children: TDummyData.user.addresses!
+                    .take(1)
+                    .map((address) => TSingleAddressWidget(
+                          address: address,
+                          onTap: () {
+                            //  selectedAddress.value = address;
+                            // Get.back();
+                          },
+                        ))
+                    .toList(),
               ),
               SizedBox(height: TSizes.spaceBtwSections),
             ],
@@ -41,7 +52,12 @@ class SellerOrderView extends StatelessWidget {
         child: SizedBox(
           width: double.infinity,
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Get.back();
+              CustomSnackBar.showCustomSnackBar(
+                  title: 'تمت عملية الشحن بنجاح',
+                  message: "تمت عملية الشحن بنجاح");
+            },
             child: Text('شحن الطلبية'),
           ),
         ),

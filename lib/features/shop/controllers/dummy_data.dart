@@ -163,26 +163,45 @@ class TDummyData {
     CategoryModel(
         id: '2',
         image: TImages.electronicsIcon,
-        name: 'الإلكترونيات',
+        name: 'الأدوات الكهرومنزلية',
         isFeatured: true),
     CategoryModel(
         id: '3', image: TImages.clothIcon, name: 'الملابس', isFeatured: true),
-    CategoryModel(
-        id: '4',
-        image: TImages.animalIcon,
-        name: 'الحيوانات',
-        isFeatured: true),
-    CategoryModel(
-        id: '6', image: TImages.shoeIcon, name: 'الأحذية', isFeatured: true),
+    // CategoryModel(
+    //     id: '4',
+    //     image: TImages.animalIcon,
+    //     name: 'الحيوانات',
+    //     isFeatured: true),
+
     CategoryModel(
         id: '7',
         image: TImages.cosmeticsIcon,
-        name: 'مستحضرات التجميل',
+        name: 'المستحضرات والأدوات الطبية',
         isFeatured: true),
     CategoryModel(
         id: '14',
         image: TImages.jeweleryIcon,
-        name: 'المجوهرات',
+        name: 'العناية بالبشرة والشعر',
+        isFeatured: true),
+    CategoryModel(
+        id: '20',
+        image: TImages.jeweleryIcon,
+        name: 'الكيميائية  والصناعية',
+        isFeatured: true),
+    CategoryModel(
+        id: '21',
+        image: TImages.jeweleryIcon,
+        name: 'العناية بالبشرة والشعر',
+        isFeatured: true),
+    CategoryModel(
+        id: '22',
+        image: TImages.jeweleryIcon,
+        name: 'الغذاء والمشروبات',
+        isFeatured: true),
+    CategoryModel(
+        id: '23',
+        image: TImages.jeweleryIcon,
+        name: 'الأدوات المدرسية ولواحقه',
         isFeatured: true),
 
     /// الفئات الفرعية

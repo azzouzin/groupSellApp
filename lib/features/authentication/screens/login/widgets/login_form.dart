@@ -4,8 +4,10 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../../home_menu.dart';
+import '../../../../../seller_home_menu.dart';
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/constants/text_strings.dart';
+import '../../../../personalization/controllers/global_controller.dart';
 import '../../password_configuration/forget_password.dart';
 
 class TLoginForm extends StatelessWidget {
@@ -13,6 +15,7 @@ class TLoginForm extends StatelessWidget {
     super.key,
   });
   UserController userController = Get.find();
+  GlobalController globalController = Get.put(GlobalController());
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -69,7 +72,10 @@ class TLoginForm extends StatelessWidget {
               child: ElevatedButton(
                   onPressed: () {
                     userController.changeIsSignedIn(true);
-                    Get.to(const HomeMenu());
+
+                    globalController.isClient
+                        ? Get.to(const HomeMenu())
+                        : Get.to(const SellerHomeMenu());
                   },
                   child: const Text(TTexts.signIn)),
             ),

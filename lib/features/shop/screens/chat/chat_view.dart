@@ -1,3 +1,4 @@
+import 'package:cwt_ecommerce_ui_kit/features/personalization/controllers/global_controller.dart';
 import 'package:cwt_ecommerce_ui_kit/features/shop/screens/chat/messege_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -14,6 +15,7 @@ import '../../../../utils/device/device_utility.dart';
 import '../../../../utils/helpers/helper_functions.dart';
 import '../../../personalization/screens/profile/profile.dart';
 import '../cart/cart.dart';
+
 class ChatView extends StatefulWidget {
   const ChatView({super.key});
 
@@ -22,6 +24,7 @@ class ChatView extends StatefulWidget {
 }
 
 class _ChatViewState extends State<ChatView> {
+  GlobalController globalController = Get.put(GlobalController());
   TextEditingController _messageController = TextEditingController();
   List<Map<String, dynamic>> messages = [
     {
@@ -31,7 +34,7 @@ class _ChatViewState extends State<ChatView> {
     },
     {
       "isClient": false,
-      "text": "من فضلك قم بالتواصل معي",
+      "text": "مرحبا بك كيف اقوم بخدمتك؟",
       "time": "10:00",
     },
   ];
@@ -57,12 +60,12 @@ class _ChatViewState extends State<ChatView> {
                     /// -- Appbar
                     Expanded(
                       child: TUserAppBarProfileCard(
-                        title: "البائع",
-                        subTitle: "مرواني عزوز",
-                        userCardOnPressed: () => Get.to(() => ProfileScreen()),
-                        actionButtonOnPressed: () =>
-                            Get.to(() => const CartScreen()),
-                      ),
+                          title:
+                              !globalController.isClient ? "العميل" : "البائع",
+                          subTitle: "مرواني عزوز",
+                          userCardOnPressed: () =>
+                              Get.to(() => ProfileScreen()),
+                          actionButtonOnPressed: () {}),
                     ),
                   ],
                 ),

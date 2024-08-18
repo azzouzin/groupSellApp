@@ -33,12 +33,14 @@ class StoreScreen extends StatelessWidget {
           automaticallyImplyLeading: false,
           title: Padding(
             padding: const EdgeInsets.only(left: TSizes.defaultSpace / 1.5),
-            child: Text('Store', style: Theme.of(context).textTheme.headlineMedium),
+            child: Text('Store',
+                style: Theme.of(context).textTheme.headlineMedium),
           ),
           actions: [
             Padding(
               padding: const EdgeInsets.only(right: TSizes.defaultSpace / 1.5),
-              child: TCartMenuIcon(onPressed: () => Get.to(() => const CartScreen())),
+              child: TCartMenuIcon(
+                  onPressed: () => Get.to(() => const CartScreen())),
             )
           ],
         ),
@@ -67,7 +69,7 @@ class StoreScreen extends StatelessWidget {
 
                       /// -- Featured Brands
                       TSectionHeading(
-                        title: 'Featured Brands',
+                        title: 'العلامات التجارية المميزة',
                         showActionButton: true,
                         onPressed: () => Get.to(() => const AllBrandsScreen()),
                       ),
@@ -82,7 +84,8 @@ class StoreScreen extends StatelessWidget {
                           return TBrandWithProductsCount(
                             brand: brand,
                             showBorder: true,
-                            onTap: () => Get.to(() => BrandScreen(brand: brand)),
+                            onTap: () =>
+                                Get.to(() => BrandScreen(brand: brand)),
                           );
                         },
                       ),
@@ -92,14 +95,19 @@ class StoreScreen extends StatelessWidget {
                 ),
 
                 /// -- TABS
-                bottom: TTabBar(tabs: categories.map((e) => Tab(child: Text(e.name))).toList()),
+                bottom: TTabBar(
+                    tabs: categories
+                        .map((e) => Tab(child: Text(e.name)))
+                        .toList()),
               )
             ];
           },
 
           /// -- TabBar Views
           body: TabBarView(
-            children: categories.map((category) => TCategoryTab(category: category)).toList(),
+            children: categories
+                .map((category) => TCategoryTab(category: category))
+                .toList(),
           ),
         ),
       ),

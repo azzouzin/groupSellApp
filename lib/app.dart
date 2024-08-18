@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'bindings/general_bindings.dart';
-import 'seller_home_menu.dart';
+import 'features/authentication/screens/onboarding/onboarding.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -18,8 +18,8 @@ class App extends StatelessWidget {
       darkTheme: TAppTheme.darkTheme,
       debugShowCheckedModeBanner: false,
       initialBinding: GeneralBindings(),
-      home: const SellerHomeMenu(),
-      // home: const OnBoardingScreen(),
+      // home: const SellerHomeMenu(),
+      home: const OnBoardingScreen(),
     );
   }
 }

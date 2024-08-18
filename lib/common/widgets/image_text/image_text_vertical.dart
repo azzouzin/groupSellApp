@@ -10,7 +10,8 @@ class TImageTextVertical extends StatelessWidget {
   const TImageTextVertical({
     super.key,
     required this.image,
-    required this.title, this.textColor = TColors.white,
+    required this.title,
+    this.textColor = TColors.white,
     this.backgroundColor,
     this.onTap,
   });
@@ -33,7 +34,9 @@ class TImageTextVertical extends StatelessWidget {
               fit: BoxFit.fitWidth,
               backgroundColor: backgroundColor,
               padding: TSizes.sm * 1.4,
-              overlayColor: THelperFunctions.isDarkMode(context) ? TColors.light : TColors.dark,
+              overlayColor: THelperFunctions.isDarkMode(context)
+                  ? TColors.light
+                  : TColors.dark,
             ),
             const SizedBox(height: TSizes.spaceBtwItems / 2),
             SizedBox(

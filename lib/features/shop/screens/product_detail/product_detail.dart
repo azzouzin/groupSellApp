@@ -1,3 +1,5 @@
+import 'package:cwt_ecommerce_ui_kit/features/shop/controllers/cart_controller.dart';
+import 'package:cwt_ecommerce_ui_kit/features/shop/screens/cart/cart.dart';
 import 'package:cwt_ecommerce_ui_kit/features/shop/screens/chat/chat_view.dart';
 import 'package:cwt_ecommerce_ui_kit/features/shop/screens/product_detail/widgets/product_attributes.dart';
 import 'package:cwt_ecommerce_ui_kit/features/shop/screens/product_detail/widgets/product_detail_image_slider.dart';
@@ -60,7 +62,11 @@ class ProductDetail extends StatelessWidget {
                     width: TDeviceUtils.getScreenWidth(context),
                     child: ElevatedButton(
                         child: const Text('اطلب'),
-                        onPressed: () => Get.to(() => const CheckoutScreen())),
+                        onPressed: () {
+                          CartController.instance.addSingleItemToCart(
+                              product, product.productVariations!.first);
+                          Get.to(() => CartScreen());
+                        }),
                   ),
                   const SizedBox(height: TSizes.spaceBtwSections),
                   // Chat

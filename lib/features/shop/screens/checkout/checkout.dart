@@ -1,3 +1,4 @@
+import 'package:cwt_ecommerce_ui_kit/features/authentication/screens/login/login.dart';
 import 'package:cwt_ecommerce_ui_kit/features/shop/screens/checkout/widgets/billing_address_section.dart';
 import 'package:cwt_ecommerce_ui_kit/features/shop/screens/checkout/widgets/billing_payment_section.dart';
 import 'package:flutter/material.dart';
@@ -11,13 +12,15 @@ import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/helpers/helper_functions.dart';
 import '../../../../utils/helpers/pricing_calculator.dart';
+import '../../../personalization/controllers/user_controller.dart';
 import '../../controllers/cart_controller.dart';
 import '../../controllers/dummy_data.dart';
 import '../cart/widgets/cart_items.dart';
 import 'checkout_successful.dart';
 
 class CheckoutScreen extends StatelessWidget {
-  const CheckoutScreen({Key? key}) : super(key: key);
+  CheckoutScreen({Key? key}) : super(key: key);
+  UserController userController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -80,9 +83,13 @@ class CheckoutScreen extends StatelessWidget {
         child: SizedBox(
           width: double.infinity,
           child: ElevatedButton(
-            onPressed: () => Get.to(() => const CheckoutSuccessfulScreen()),
+            onPressed: () {
+              userController.isSignedIn
+                  ? Get.to(CheckoutSuccessfulScreen())
+                  : Get.to(() => const LoginScreen());
+            },
             child: Text(
-                'اطلب الان \$${TPricingCalculator.calculateTotalPrice(subTotal, 'US')}'),
+                'اطلب الان DZ${TPricingCalculator.calculateTotalPrice(subTotal, 'US')}'),
           ),
         ),
       ),

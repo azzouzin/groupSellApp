@@ -10,6 +10,7 @@ import 'features/personalization/screens/setting/settings.dart';
 import 'features/shop/screens/chat/users_view.dart';
 import 'features/shop/screens/favourites/favourite.dart';
 import 'features/shop/screens/home/home.dart';
+import 'features/shop/screens/seller_orders/order_list_view.dart';
 import 'features/shop/screens/store/store.dart';
 
 class SellerHomeMenu extends StatelessWidget {
@@ -52,7 +53,7 @@ class AppScreenSellerController extends GetxController {
   final Rx<int> selectedMenu = 0.obs;
 
   final screens = [
-    const SellerOrderView(),
+    OrdersListView(),
     UsersView(),
   ];
 }

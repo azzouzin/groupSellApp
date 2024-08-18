@@ -32,7 +32,10 @@ class TCategoryTab extends StatelessWidget {
                 children: categoryBrands
                     .map((brand) => TBrandShowcase(
                           brand: brand,
-                          images: controller.getBrandProducts(brand.id).map((e) => e.thumbnail).toList(),
+                          images: controller
+                              .getBrandProducts(brand.id)
+                              .map((e) => e.thumbnail)
+                              .toList(),
                         ))
                     .toList(),
               ),
@@ -43,14 +46,18 @@ class TCategoryTab extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   TSectionHeading(
-                    title: 'You might like',
+                    title: 'قد يعجبك',
                     showActionButton: true,
-                    onPressed: () => Get.to(AllProducts(title: category.name, products: categoryProducts)),
+                    onPressed: () => Get.to(AllProducts(
+                        title: category.name, products: categoryProducts)),
                   ),
                   const SizedBox(height: TSizes.spaceBtwItems),
                   TGridLayout(
-                    itemCount: categoryProducts.length < 4 ? categoryProducts.length : 4,
-                    itemBuilder: (_, index) => TProductCardVertical(product: categoryProducts[index]),
+                    itemCount: categoryProducts.length < 4
+                        ? categoryProducts.length
+                        : 4,
+                    itemBuilder: (_, index) =>
+                        TProductCardVertical(product: categoryProducts[index]),
                   ),
                 ],
               ),
