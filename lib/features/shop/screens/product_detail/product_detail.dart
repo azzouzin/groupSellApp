@@ -15,7 +15,6 @@ import '../../../../common/widgets/texts/section_heading.dart';
 import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/device/device_utility.dart';
 import '../../models/product_model.dart';
-import '../checkout/checkout.dart';
 import '../product_reviews/product_reviews.dart';
 
 class ProductDetail extends StatelessWidget {

@@ -41,47 +41,96 @@ class TProductMetaData extends StatelessWidget {
                   .labelLarge!
                   .apply(color: TColors.black)),
         ),
-        Row(
-          children: [
-            /// -- Sale Tag
-            if (salePercentage != null)
-              Row(
-                children: [
-                  TRoundedContainer(
-                    backgroundColor: TColors.secondary,
-                    radius: TSizes.sm,
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: TSizes.sm, vertical: TSizes.xs),
-                    child: Text('$salePercentage% وفر لكل 1500 قطعة',
-                        style: Theme.of(context)
-                            .textTheme
-                            .labelLarge!
-                            .apply(color: TColors.black)),
-                  ),
-                  const SizedBox(width: TSizes.spaceBtwItems)
-                ],
-              ),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              /// -- Sale Tag
+              if (salePercentage != null)
+                Row(
+                  children: [
+                    TRoundedContainer(
+                      backgroundColor: TColors.secondary,
+                      radius: TSizes.sm,
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: TSizes.sm, vertical: TSizes.xs),
+                      child: Text('$salePercentage% وفر لكل 1500 قطعة',
+                          style: Theme.of(context)
+                              .textTheme
+                              .labelLarge!
+                              .apply(color: TColors.black)),
+                    ),
+                    const SizedBox(width: TSizes.spaceBtwItems)
+                  ],
+                ),
 
-            // Actual Price if sale price not null.
-            if (product.productVariations == null && product.salePrice != null)
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    product.price.toString(),
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleSmall!
-                        .apply(decoration: TextDecoration.lineThrough),
-                  ),
-                  const SizedBox(width: TSizes.spaceBtwItems)
-                ],
-              ),
+              // Actual Price if sale price not null.
+              if (product.productVariations == null &&
+                  product.salePrice != null)
+                // Row(
+                //   crossAxisAlignment: CrossAxisAlignment.start,
+                //   children: [
+                //     Row(
+                //       children: [
+                //         Text(
+                //           product.price.toString(),
+                //           style: Theme.of(context)
+                //               .textTheme
+                //               .titleSmall!
+                //               .apply(decoration: TextDecoration.lineThrough),
+                //         ),
+                //         Text(
+                //           product.price.toString(),
+                //           style: Theme.of(context)
+                //               .textTheme
+                //               .titleSmall!
+                //               .apply(decoration: TextDecoration.lineThrough),
+                //         ),
+                //         Text(
+                //           product.price.toString(),
+                //           style: Theme.of(context)
+                //               .textTheme
+                //               .titleSmall!
+                //               .apply(decoration: TextDecoration.lineThrough),
+                //         ),
+                //       ],
+                //     ),
+                //     const SizedBox(width: TSizes.spaceBtwItems)
+                //   ],
+                // ),
 
-            // Price, Show sale price as main price if sale exist.
-            TProductPriceText(
-                price: controller.getProductPrice(product), isLarge: true),
-          ],
+                // Price, Show sale price as main price if sale exist.
+                TProductPriceText(
+                    price: controller.getProductPrice(product), isLarge: true),
+              Container(
+                height: 30,
+                width: 2,
+                color: Colors.black,
+                margin: EdgeInsets.symmetric(horizontal: 8),
+              ),
+              TProductPriceText(
+                  price: controller.getProductPrice(product), isLarge: true),
+              Container(
+                height: 30,
+                width: 2,
+                color: Colors.black,
+                margin: EdgeInsets.symmetric(horizontal: 8),
+              ),
+              TProductPriceText(
+                  price: controller.getProductPrice(product), isLarge: true),
+              Container(
+                height: 30,
+                width: 2,
+                color: Colors.black,
+                margin: EdgeInsets.symmetric(horizontal: 8),
+              ),
+              TProductPriceText(
+                price: controller.getProductPrice(product),
+                isLarge: true,
+                divider: 0.5,
+              ),
+            ],
+          ),
         ),
         const SizedBox(height: TSizes.spaceBtwItems / 1.5),
         TProductTitleText(title: product.title),
