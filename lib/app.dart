@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 
 import 'bindings/general_bindings.dart';
 import 'features/authentication/screens/onboarding/onboarding.dart';
+import 'features/shop/screens/addproduct/add_product.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -18,7 +19,7 @@ class App extends StatelessWidget {
       darkTheme: TAppTheme.darkTheme,
       debugShowCheckedModeBanner: false,
       initialBinding: GeneralBindings(),
-      // home: const SellerHomeMenu(),
+      //  home: const CompleteForm(),
       home: const OnBoardingScreen(),
     );
   }

@@ -47,7 +47,6 @@ class StoreController extends GetxController {
         .map((e) => TDummyData.products.where((product) => product.id == e.productId).single)
         .toSet()
         .toList();
-
     return products;
   }
 }

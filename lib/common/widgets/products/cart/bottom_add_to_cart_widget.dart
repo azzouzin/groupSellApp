@@ -24,7 +24,8 @@ class TBottomAddToCart extends StatelessWidget {
     final dark = THelperFunctions.isDarkMode(context);
 
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace, vertical: TSizes.defaultSpace / 2),
+      padding: const EdgeInsets.symmetric(
+          horizontal: TSizes.defaultSpace, vertical: TSizes.defaultSpace / 2),
       decoration: BoxDecoration(
         color: dark ? TColors.darkerGrey : TColors.light,
         borderRadius: const BorderRadius.only(
@@ -39,21 +40,28 @@ class TBottomAddToCart extends StatelessWidget {
             // Add OR Remove Cart Product Icon Buttons
             TAddRemoveCartButtons(
               quantity: productController.cartQuantity.value,
-              add: () => productController.cartQuantity.value += 1,
+              add: () => productController.cartQuantity.value += 100,
               // Disable remove when cart count is less then 1
-              remove: () => productController.cartQuantity.value < 1 ? null : productController.cartQuantity.value -= 1,
+              remove: () => productController.cartQuantity.value < 1
+                  ? null
+                  : productController.cartQuantity.value -= 100,
             ),
             // Add to cart button
             ElevatedButton(
-              onPressed:
-                  productController.cartQuantity.value < 1 ? null : () => productController.addProductToCart(product),
+              onPressed: productController.cartQuantity.value < 1
+                  ? null
+                  : () => productController.addProductToCart(product),
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.all(TSizes.md),
                 backgroundColor: TColors.black,
                 side: const BorderSide(color: TColors.black),
               ),
               child: const Row(
-                children: [Icon(Iconsax.shopping_bag), SizedBox(width: TSizes.spaceBtwItems / 2), Text('Add to Bag')],
+                children: [
+                  Icon(Iconsax.shopping_bag),
+                  SizedBox(width: TSizes.spaceBtwItems / 2),
+                  Text('Add to Bag')
+                ],
               ),
             ),
           ],

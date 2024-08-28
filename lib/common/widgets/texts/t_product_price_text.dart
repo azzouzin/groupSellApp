@@ -26,7 +26,9 @@ class TProductPriceText extends StatelessWidget {
     return Column(
       children: [
         Text(
-          currencySign + " " + "${double.parse(price) * divider}",
+          currencySign +
+              " " +
+              "${(double.parse(price) * divider).toStringAsFixed(2)}",
           maxLines: maxLines,
           overflow: TextOverflow.ellipsis,
           style: isLarge

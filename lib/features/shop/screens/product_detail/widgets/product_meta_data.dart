@@ -54,7 +54,7 @@ class TProductMetaData extends StatelessWidget {
                       radius: TSizes.sm,
                       padding: const EdgeInsets.symmetric(
                           horizontal: TSizes.sm, vertical: TSizes.xs),
-                      child: Text('$salePercentage% وفر لكل 1500 قطعة',
+                      child: Text('وفر اكثر ',
                           style: Theme.of(context)
                               .textTheme
                               .labelLarge!
@@ -101,7 +101,11 @@ class TProductMetaData extends StatelessWidget {
 
                 // Price, Show sale price as main price if sale exist.
                 TProductPriceText(
-                    price: controller.getProductPrice(product), isLarge: true),
+                  price: controller.getProductPrice(product),
+                  isLarge: true,
+                  min: 100,
+                  max: 1000,
+                ),
               Container(
                 height: 30,
                 width: 2,
@@ -109,7 +113,12 @@ class TProductMetaData extends StatelessWidget {
                 margin: EdgeInsets.symmetric(horizontal: 8),
               ),
               TProductPriceText(
-                  price: controller.getProductPrice(product), isLarge: true),
+                price: controller.getProductPrice(product),
+                isLarge: true,
+                divider: 0.9,
+                min: 100,
+                max: 1000,
+              ),
               Container(
                 height: 30,
                 width: 2,
@@ -117,7 +126,12 @@ class TProductMetaData extends StatelessWidget {
                 margin: EdgeInsets.symmetric(horizontal: 8),
               ),
               TProductPriceText(
-                  price: controller.getProductPrice(product), isLarge: true),
+                price: controller.getProductPrice(product),
+                isLarge: true,
+                divider: 0.7,
+                min: 1000,
+                max: 2000,
+              ),
               Container(
                 height: 30,
                 width: 2,
@@ -128,6 +142,8 @@ class TProductMetaData extends StatelessWidget {
                 price: controller.getProductPrice(product),
                 isLarge: true,
                 divider: 0.5,
+                min: 2000,
+                max: 5000,
               ),
             ],
           ),

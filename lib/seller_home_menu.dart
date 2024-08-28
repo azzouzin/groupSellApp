@@ -1,3 +1,4 @@
+import 'package:cwt_ecommerce_ui_kit/features/shop/screens/addproduct/add_product.dart';
 import 'package:cwt_ecommerce_ui_kit/features/shop/screens/chat/chat_view.dart';
 import 'package:cwt_ecommerce_ui_kit/features/shop/screens/seller_orders/seller_order_view.dart';
 import 'package:cwt_ecommerce_ui_kit/utils/constants/colors.dart';
@@ -20,6 +21,11 @@ class SellerHomeMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(AppScreenSellerController());
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+          child: Icon(Iconsax.add, color: TColors.white),
+          onPressed: () {
+            Get.to(CompleteForm());
+          }),
       extendBody: true,
       bottomNavigationBar: Obx(
         () => NavigationBar(

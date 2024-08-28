@@ -25,10 +25,12 @@ class CartController extends GetxController {
     super.onInit();
   }
 
-  void addSingleItemToCart(ProductModel product, ProductVariationModel variation) {
+  void addSingleItemToCart(
+      ProductModel product, ProductVariationModel variation) {
     // If the product is already added then increment the count else add new product
     final cartItem = cartItems.firstWhere(
-      (item) => item.productId == product.id && item.variationId == variation.id,
+      (item) =>
+          item.productId == product.id && item.variationId == variation.id,
       orElse: () => CartItemModel(
         productId: product.id,
         variationId: variation.id,
@@ -56,19 +58,24 @@ class CartController extends GetxController {
     cartItems.refresh();
   }
 
-  void addMultipleItemsToCart(ProductModel product, ProductVariationModel variation, int quantity) {
+  void addMultipleItemsToCart(
+      ProductModel product, ProductVariationModel variation, int quantity) {
     // If the product is already added then increment the count else add new product
     final cartItem = cartItems.firstWhere(
-      (item) => item.productId == product.id && item.variationId == variation.id,
+      (item) =>
+          item.productId == product.id && item.variationId == variation.id,
       orElse: () => CartItemModel(
         productId: product.id,
         variationId: variation.id,
         quantity: 0,
         title: product.title,
         image: variation.id.isEmpty ? product.thumbnail : variation.image,
-        price: variation.id.isEmpty ? product.salePrice ?? product.price : variation.salePrice ?? variation.price,
+        price: variation.id.isEmpty
+            ? product.salePrice ?? product.price
+            : variation.salePrice ?? variation.price,
         brandName: product.brand!.name,
-        selectedVariation: variation.id.isNotEmpty ? variation.attributeValues : null,
+        selectedVariation:
+            variation.id.isNotEmpty ? variation.attributeValues : null,
       ),
     );
 
@@ -78,21 +85,24 @@ class CartController extends GetxController {
       cartItem.quantity = quantity;
       cartItems.add(cartItem);
       // Increment Total Cart Price
-      totalCartPrice.value += calculateSingleProductTotal(product.price, quantity);
+      totalCartPrice.value +=
+          calculateSingleProductTotal(product.price, quantity);
       // Increment Product Quantities
       // productQuantities[product.id] = quantity;
     } else {
       // Check if you need to remove or add items to the cart
       if (cartItem.quantity > quantity) {
         // Subtract
-        totalCartPrice.value -= calculateSingleProductTotal(cartItem.price!, quantity);
+        totalCartPrice.value -=
+            calculateSingleProductTotal(cartItem.price!, quantity);
         // Set the new quantity of productQuantities
         // if (productQuantities.containsKey(product.id)) {
         //   productQuantities[product.id] = (productQuantities[product.id] ?? 0) - quantity;
         // }
       } else {
         // Increment
-        totalCartPrice.value += calculateSingleProductTotal(product.price, quantity);
+        totalCartPrice.value +=
+            calculateSingleProductTotal(product.price, quantity);
         // if (productQuantities.containsKey(product.id)) {
         //   productQuantities[product.id] = (productQuantities[product.id] ?? 0) + quantity;
         // }
@@ -115,7 +125,8 @@ class CartController extends GetxController {
         // Remove that product from the Product Quantities.
         // productQuantities.remove(cartItem.productId);
         // Remove the price from the total
-        totalCartPrice.value -= calculateSingleProductTotal(cartItem.price!, cartItem.quantity);
+        totalCartPrice.value -=
+            calculateSingleProductTotal(cartItem.price!, cartItem.quantity);
         cartItems.refresh();
         Get.back();
       },
@@ -124,6 +135,8 @@ class CartController extends GetxController {
   }
 
   void updateCartItemQuantity(CartItemModel cartItem, int newQuantity) {
+    // newQuantity -= 1;
+    // newQuantity += 100;
     if (newQuantity.isEqual(0)) {
       removeItemFromCart(cartItem);
     } else {
@@ -165,12 +178,19 @@ class CartController extends GetxController {
       cartEntries = cartItems
           .where((item) => item.productId == productId)
           .map((e) => e.quantity)
-          .fold(0, (previousQuantity, nextQuantity) => previousQuantity + nextQuantity);
+          .fold(
+              0,
+              (previousQuantity, nextQuantity) =>
+                  previousQuantity + nextQuantity);
     } else {
       cartEntries = cartItems
-          .where((item) => item.productId == productId && item.variationId == variationId)
+          .where((item) =>
+              item.productId == productId && item.variationId == variationId)
           .map((e) => e.quantity)
-          .fold(0, (previousQuantity, nextQuantity) => previousQuantity + nextQuantity);
+          .fold(
+              0,
+              (previousQuantity, nextQuantity) =>
+                  previousQuantity + nextQuantity);
     }
 
     return cartEntries;

@@ -154,7 +154,10 @@ class TDummyData {
   /// -- قائمة جميع الفئات
   static final List<CategoryModel> categories = [
     CategoryModel(
-        id: '1', image: TImages.sportIcon, name: 'الرياضة', isFeatured: true),
+        id: '1',
+        image: TImages.sportIcon,
+        name: 'الآلات والمعدات الرياضية',
+        isFeatured: true),
     CategoryModel(
         id: '5',
         image: TImages.furnitureIcon,
@@ -185,22 +188,22 @@ class TDummyData {
         isFeatured: true),
     CategoryModel(
         id: '20',
-        image: TImages.jeweleryIcon,
+        image: TImages.chemicals,
         name: 'الكيميائية  والصناعية',
         isFeatured: true),
     CategoryModel(
         id: '21',
-        image: TImages.jeweleryIcon,
-        name: 'العناية بالبشرة والشعر',
+        image: TImages.skinCare,
+        name: 'الأجهزة التقنية',
         isFeatured: true),
     CategoryModel(
         id: '22',
-        image: TImages.jeweleryIcon,
+        image: TImages.food,
         name: 'الغذاء والمشروبات',
         isFeatured: true),
     CategoryModel(
         id: '23',
-        image: TImages.jeweleryIcon,
+        image: TImages.school,
         name: 'الأدوات المدرسية ولواحقه',
         isFeatured: true),
 

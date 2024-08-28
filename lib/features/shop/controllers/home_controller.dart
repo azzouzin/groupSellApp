@@ -14,12 +14,15 @@ class HomeController extends GetxController {
   }
 
   List<CategoryModel> getFeaturedCategories() {
-    return CategoryController.instance.getFeaturedCategories(8);
+    return CategoryController.instance.getFeaturedCategories(10);
   }
 
   List<ProductModel> getFeaturedProducts() {
     // Get Featured Products from your data source
-    return TDummyData.products.where((product) => product.isFeatured ?? false).take(6).toList();
+    return TDummyData.products
+        .where((product) => product.isFeatured ?? false)
+        .take(6)
+        .toList();
   }
 
   List<ProductModel> getPopularProducts() {
