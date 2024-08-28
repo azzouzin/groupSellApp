@@ -4,11 +4,13 @@ import 'package:get/utils.dart';
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/helpers/helper_functions.dart';
 
-
-
 class OnBoardingPage extends StatelessWidget {
   /// Custom Page Design Widget for On-Boarding Screens. Pass your image, title and subTitle.
-  const OnBoardingPage({super.key, required this.image, required this.title, required this.subTitle});
+  const OnBoardingPage(
+      {super.key,
+      required this.image,
+      required this.title,
+      required this.subTitle});
 
   final String image, title, subTitle;
 
@@ -23,9 +25,19 @@ class OnBoardingPage extends StatelessWidget {
             height: THelperFunctions.screenHeight() * 0.6,
             image: AssetImage(image),
           ),
-          Text(title.capitalize!, style: Theme.of(context).textTheme.headlineMedium, textAlign: TextAlign.center),
+          Text(title.capitalize!,
+              style: Theme.of(context)
+                  .textTheme
+                  .headlineMedium!
+                  .copyWith(color: Colors.white),
+              textAlign: TextAlign.center),
           const SizedBox(height: TSizes.md),
-          Text(subTitle, style: Theme.of(context).textTheme.bodyMedium, textAlign: TextAlign.center),
+          Text(subTitle,
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyMedium!
+                  .copyWith(color: Colors.white),
+              textAlign: TextAlign.center),
         ],
       ),
     );

@@ -11,16 +11,16 @@ class TTexts {
   static const String seller = "بائع";
 
   // -- OnBoarding Texts
-  static const String onBoardingTitle1 = "اختر منتجك";
-  static const String onBoardingTitle2 = "حدد طريقة الدفع";
-  static const String onBoardingTitle3 = "سوف يصلك إلى باب منزلك";
+  static const String onBoardingTitle1 = "مرحبًا بك في ColleBuy - B2B!";
+  static const String onBoardingTitle2 = "منحنى لإرتفاع الأرباح";
+  static const String onBoardingTitle3 = "الانتقال إلى الشاشة الرئيسية";
 
   static const String onBoardingSubTitle1 =
-      "مرحبًا بك في عالم من الخيارات اللامحدودة - منتجك المثالي ينتظرك!";
+      "كل ما تحتاجه في مكان واحد زد من مبيعاتك و أرباحك في نشاطك التجاري";
   static const String onBoardingSubTitle2 =
-      "لعمليات نقل سلسة، اختر طريق الدفع الخاص بك - راحتك هي أولويتنا!";
+      "شارك في عملية الشراء الجماعي  وأشتري بأقل سعر وأقل تكلفة";
   static const String onBoardingSubTitle3 =
-      "من بابنا إلى بابك - توصيل سريع وآمن وبدون تلامس!";
+      " إبدأ الآن واستمتع بتجربة شراء فريدة ! \n E-COMMERCE APPLICATION - BUSINESS TO BUSINESS - POUR LES ENTREPRISES ÉCONOMIQUES";
 
   // -- Authentication Forms
   static const String firstName = "الاسم الأول";

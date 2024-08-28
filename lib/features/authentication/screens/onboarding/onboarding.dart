@@ -2,6 +2,7 @@ import 'package:cwt_ecommerce_ui_kit/features/authentication/screens/onboarding/
 import 'package:cwt_ecommerce_ui_kit/features/authentication/screens/onboarding/widgets/onboarding_next_button.dart';
 import 'package:cwt_ecommerce_ui_kit/features/authentication/screens/onboarding/widgets/onboarding_page.dart';
 import 'package:cwt_ecommerce_ui_kit/features/authentication/screens/onboarding/widgets/onboarding_skip_button.dart';
+import 'package:cwt_ecommerce_ui_kit/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,6 +17,7 @@ class OnBoardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(OnBoardingController());
     return Scaffold(
+      backgroundColor: TColors.primary,
       body: Stack(
         children: [
           /// Horizontal Scrollable Pages

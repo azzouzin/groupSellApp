@@ -4,9 +4,9 @@
 class TImages {
   // -- App Logos
   static const String darkAppLogo =
-      "assets/logos/t-store-splash-logo-black.png";
+      "assets/logos/t-store-splash-logo-black.jpg";
   static const String lightAppLogo =
-      "assets/logos/t-store-splash-logo-white.png";
+      "assets/logos/t-store-splash-logo-white.jpg";
 
   // -- Social Logos
   static const String google = "assets/logos/google-icon.png";
