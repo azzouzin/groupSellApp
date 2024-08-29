@@ -25,6 +25,7 @@ class OnBoardingPage extends StatelessWidget {
             height: THelperFunctions.screenHeight() * 0.6,
             image: AssetImage(image),
           ),
+          Spacer(),
           Text(title.capitalize!,
               style: Theme.of(context)
                   .textTheme
@@ -38,6 +39,7 @@ class OnBoardingPage extends StatelessWidget {
                   .bodyMedium!
                   .copyWith(color: Colors.white),
               textAlign: TextAlign.center),
+          Spacer(),
         ],
       ),
     );

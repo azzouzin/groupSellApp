@@ -26,7 +26,7 @@ class OnBoardingController extends GetxController {
     // If its the last index then goto Login Screen.
     // Here you can define your LocalStorage to set OnBoarding bool isFirstTime = false.
     // So, that where ever app launches, app will check if isFirstTime = true, show onBoarding else show Login or Dashboard.
-    if (currentPageIndex.value == 2) {
+    if (currentPageIndex.value == 3) {
       Get.to(() => HomeMenu());
     } else {
       int page = currentPageIndex.value + 1;
@@ -36,7 +36,7 @@ class OnBoardingController extends GetxController {
 
   /// Update Current Index & jump to the last Page
   void skipPage() {
-    currentPageIndex.value = 2;
-    pageController.jumpToPage(2);
+    currentPageIndex.value = 3;
+    pageController.jumpToPage(3);
   }
 }

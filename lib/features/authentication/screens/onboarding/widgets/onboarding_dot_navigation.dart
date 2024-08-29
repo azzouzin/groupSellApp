@@ -20,10 +20,11 @@ class TOnBoardingDotNavigation extends StatelessWidget {
       bottom: TDeviceUtils.getBottomNavigationBarHeight() + 25,
       left: TSizes.defaultSpace,
       child: SmoothPageIndicator(
-        count: 3,
+        count: 4,
         controller: controller.pageController,
         onDotClicked: controller.dotNavigationClick,
-        effect: ExpandingDotsEffect(activeDotColor: dark ? TColors.white: TColors.black, dotHeight: 6),
+        effect: ExpandingDotsEffect(
+            activeDotColor: dark ? TColors.white : TColors.black, dotHeight: 6),
       ),
     );
   }

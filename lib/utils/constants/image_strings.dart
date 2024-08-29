@@ -37,6 +37,8 @@ class TImages {
       "assets/icons/categories/icons8-skincare-50.png";
   static const String chemicals =
       "assets/icons/categories/icons8-chemicals-64.png";
+  static const String electronics =
+      "assets/icons/categories/icons8-radio-50.png";
 
   // -- Brand Icons
   static const String nikeLogo = "assets/icons/brands/nike.png";
@@ -69,7 +71,7 @@ class TImages {
   static const String onBoardingImage1 =
       "assets/images/on_boarding_images/sammy-line-searching.gif";
   static const String onBoardingImage2 =
-      "assets/images/on_boarding_images/sammy-line-shopping.gif";
+      "assets/images/on_boarding_images/sales_increase.gif";
   static const String onBoardingImage3 =
       "assets/images/on_boarding_images/sammy-line-delivery.gif";
 

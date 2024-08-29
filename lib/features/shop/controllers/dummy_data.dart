@@ -165,7 +165,7 @@ class TDummyData {
         isFeatured: true),
     CategoryModel(
         id: '2',
-        image: TImages.electronicsIcon,
+        image: TImages.electronics,
         name: 'الأدوات الكهرومنزلية',
         isFeatured: true),
     CategoryModel(
@@ -183,7 +183,7 @@ class TDummyData {
         isFeatured: true),
     CategoryModel(
         id: '14',
-        image: TImages.jeweleryIcon,
+        image: TImages.skinCare,
         name: 'العناية بالبشرة والشعر',
         isFeatured: true),
     CategoryModel(
@@ -193,7 +193,7 @@ class TDummyData {
         isFeatured: true),
     CategoryModel(
         id: '21',
-        image: TImages.skinCare,
+        image: TImages.electronicsIcon,
         name: 'الأجهزة التقنية',
         isFeatured: true),
     CategoryModel(
