@@ -30,12 +30,12 @@ class SettingsScreen extends StatelessWidget {
                 width: Get.width * 0.9,
                 child: OutlinedButton(
                   style: ButtonStyle(
-                      backgroundColor: WidgetStatePropertyAll(Colors.amber)),
+                      backgroundColor: MaterialStateProperty.all(Colors.amber)),
                   onPressed: () {
                     Get.to(ChoseScreen());
                   },
                   child: const Text(
-                    'Login',
+                    'تسجيل الدخول',
                   ),
                 ),
               ),

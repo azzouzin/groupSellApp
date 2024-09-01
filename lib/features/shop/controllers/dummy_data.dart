@@ -170,11 +170,12 @@ class TDummyData {
         isFeatured: true),
     CategoryModel(
         id: '3', image: TImages.clothIcon, name: 'الملابس', isFeatured: true),
-    // CategoryModel(
-    //     id: '4',
-    //     image: TImages.animalIcon,
-    //     name: 'الحيوانات',
-    //     isFeatured: true),
+    CategoryModel(
+      id: '4',
+      image: TImages.animalIcon,
+      name: 'قطع الغيار',
+      isFeatured: true,
+    ),
 
     CategoryModel(
         id: '7',
