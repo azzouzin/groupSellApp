@@ -14,19 +14,26 @@ class StoreController extends GetxController {
 
   List<BrandModel> getFeaturedBrands() {
     // Get Featured Brands from your data source
-    return TDummyData.brands.where((brand) => brand.isFeatured ?? false).take(4).toList();
+    return TDummyData.brands
+        .where((brand) => brand.isFeatured ?? false)
+        .take(4)
+        .toList();
   }
 
   List<ProductModel> getBrandProducts(String brandId) {
     // Get Featured Brands from your data source
-    return TDummyData.products.where((product) => product.brand!.id == brandId).take(3).toList();
+    return TDummyData.products
+        .where((product) => product.brand!.id == brandId)
+        .take(3)
+        .toList();
   }
 
   List<BrandModel> getCategoryBrands(String categoryId) {
     // Get Brands
     final brands = TDummyData.brandCategories
         .where((brandCategory) => brandCategory.categoryId == categoryId)
-        .map((e) => TDummyData.brands.where((brand) => brand.id == e.brandId).single)
+        .map((e) =>
+            TDummyData.brands.where((brand) => brand.id == e.brandId).single)
         .take(2)
         .toList();
 
@@ -37,14 +44,19 @@ class StoreController extends GetxController {
     // Use .toSet() to get unique products.
     // First we have to get all subCategories of this Category if any.
     // Example: Category is Sports -> Sub Categories are Running Shoes, Tracksuits etc
-    final subCategoryIds =
-        TDummyData.categories.where((element) => element.parentId == categoryId).map((e) => e.id).toList();
+    final subCategoryIds = TDummyData.categories
+        .where((element) => element.parentId == categoryId)
+        .map((e) => e.id)
+        .toList();
 
     // Get products based on category and sub Categories
     final products = TDummyData.productCategories
         .where((productCategory) =>
-            productCategory.categoryId == categoryId || subCategoryIds.contains(productCategory.categoryId))
-        .map((e) => TDummyData.products.where((product) => product.id == e.productId).single)
+            productCategory.categoryId == categoryId ||
+            subCategoryIds.contains(productCategory.categoryId))
+        .map((e) => TDummyData.products
+            .where((product) => product.id == e.productId)
+            .single)
         .toSet()
         .toList();
     return products;
