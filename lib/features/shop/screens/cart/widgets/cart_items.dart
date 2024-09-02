@@ -48,7 +48,7 @@ class TCartItems extends StatelessWidget {
 
                   if (!showAddRemoveButtons)
                     const Text(
-                      "مرواني عزوز",
+                      "Fercha Badereddine",
                     ),
                   if (showAddRemoveButtons)
                     const SizedBox(height: TSizes.spaceBtwItems),

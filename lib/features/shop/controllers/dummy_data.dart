@@ -17,27 +17,27 @@ import '../models/product_variation_model.dart';
 class TDummyData {
   /// -- User
   static final UserModel user = UserModel(
-    firstName: 'مروان',
-    lastName: 'عزوز',
+    firstName: 'Fercha ',
+    lastName: 'Badereddine',
     email: 'azzouzmerw@gmail.com',
-    phoneNumber: '+213562413935',
+    phoneNumber: '+213672757000',
     password: '',
     profilePicture: TImages.user,
     addresses: [
       AddressModel(
         id: '1',
-        name: 'مروان احمد',
-        phoneNumber: '+213578059528',
+        name: 'Fercha  Badereddine',
+        phoneNumber: '+213672757000',
         street: '82311 مسكن',
-        city: 'عين ارنات',
-        state: 'سطيف',
+        city: 'عين جاسر',
+        state: 'باتنة',
         postalCode: '87547',
         country: 'الجزائر',
       ),
       AddressModel(
         id: '2',
-        name: 'مرواني عزوز',
-        phoneNumber: '+213578059528',
+        name: 'Fercha Badereddine',
+        phoneNumber: '+213672757000',
         street: '82311 مسكن',
         city: 'عين ارنات',
         state: 'سطيف',
@@ -1277,7 +1277,7 @@ class TDummyData {
     ProductReviewModel(
       id: '01',
       userId: '001',
-      userName: 'مرواني عزوز',
+      userName: 'Fercha Badereddine',
       rating: 4.5,
       timestamp: DateTime.now(),
       companyTimestamp: DateTime.now(),

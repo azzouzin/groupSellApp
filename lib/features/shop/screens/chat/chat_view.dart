@@ -62,7 +62,7 @@ class _ChatViewState extends State<ChatView> {
                       child: TUserAppBarProfileCard(
                           title:
                               !globalController.isClient ? "العميل" : "البائع",
-                          subTitle: "مرواني عزوز",
+                          subTitle: "Fercha  Badereddine",
                           userCardOnPressed: () =>
                               Get.to(() => ProfileScreen()),
                           actionButtonOnPressed: () {}),
