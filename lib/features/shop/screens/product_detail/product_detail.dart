@@ -14,14 +14,15 @@ import '../../../../common/widgets/products/cart/bottom_add_to_cart_widget.dart'
 import '../../../../common/widgets/texts/section_heading.dart';
 import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/device/device_utility.dart';
+import '../../controllers/product_controller.dart';
 import '../../models/product_model.dart';
 import '../product_reviews/product_reviews.dart';
 
 class ProductDetail extends StatelessWidget {
-  const ProductDetail({super.key, required this.product});
+  ProductDetail({super.key, required this.product});
 
   final ProductModel product;
-
+  final productController = ProductController.instance;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,6 +56,51 @@ class ProductDetail extends StatelessWidget {
                     ProductAttributes(product: product),
                   if (product.productVariations != null)
                     const SizedBox(height: TSizes.spaceBtwSections),
+                  Container(
+                    width: Get.width, // Width of the progress bar
+                    height: 20, // Height of the progress bar
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30),
+                      border: Border.all(color: Colors.grey, width: 2),
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(30),
+                      child: Obx(() {
+                        return Row(
+                          children: [
+                            ...List.generate(
+                              (productController.cartQuantity.value.toInt() /
+                                      100)
+                                  .round(),
+                              (index) => Container(
+                                width: 10,
+                                color: Colors.yellow,
+                              ),
+                            ),
+                            // Create colored segments
+                          ],
+                        );
+                      }),
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Obx(() {
+                        return Text(
+                          productController.cartQuantity.value.toString(),
+                          style: const TextStyle(
+                              fontSize: 15, fontWeight: FontWeight.bold),
+                        );
+                      }),
+                      const Text(
+                        "3600  حد الشراء الجماعي",
+                        style: TextStyle(
+                            fontSize: 15, fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: TSizes.spaceBtwItems),
 
                   /// -- Checkout Button
                   SizedBox(
@@ -64,7 +110,7 @@ class ProductDetail extends StatelessWidget {
                         onPressed: () {
                           CartController.instance.addSingleItemToCart(
                               product, product.productVariations!.first);
-                          Get.to(() => CartScreen());
+                          Get.to(() => const CartScreen());
                         }),
                   ),
                   const SizedBox(height: TSizes.spaceBtwSections),

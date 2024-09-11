@@ -37,6 +37,7 @@ dependencies:
   flutter_form_builder: any
   form_builder_validators: any
   image_picker: any
+  dropdown_button2: ^2.3.9
 
   #--------------- ./ PACKAGES END ------------------#
 
@@ -61,6 +62,8 @@ flutter:
     - assets/images/animations/
     - assets/icons/payment_methods/
     - assets/images/on_boarding_images/
+    - assets/json/
+    - shorebird.yaml
 
   #--------------- LOCAL FONTS ------------------#
   fonts:
